@@ -1,10 +1,8 @@
-name: Dockker jackettio
+name: Publish Docker Jackettio
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  release:
+    types: [published]
 
 jobs:
 
