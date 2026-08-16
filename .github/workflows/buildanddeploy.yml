@@ -22,7 +22,7 @@ jobs:
       run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag cr0wm4n/torrentio:${TIMESTAMP}
+      run: docker build . --file Dockerfile --tag cr0wm4n/jackettio:${TIMESTAMP}
 
     - name: Push the Docker image
-      run: docker push cr0wm4n/torrentio:${TIMESTAMP}
+      run: docker push cr0wm4n/jackettio:${{ github.event.release.tag_name }}
