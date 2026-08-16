@@ -17,7 +17,6 @@ jobs:
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
     - name: Generate timestamp
-      run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
       run: echo "RELEASE=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
 
     - name: Build the Docker image
