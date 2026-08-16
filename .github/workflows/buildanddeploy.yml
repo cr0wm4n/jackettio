@@ -18,6 +18,7 @@ jobs:
 
     - name: Generate timestamp
       run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
+      run: echo "RELEASE=${{ github.event.release.tag_name }}" >> $GITHUB_ENV
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag cr0wm4n/jackettio:${{ github.event.release.tag_name }}
